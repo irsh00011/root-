@@ -12,7 +12,10 @@
 <body class="home">
   <header class="hero">
     <nav class="site-nav"><a href="index.html">Home</a><a href="#collection">Our Creative</a><a href="about.html">About Us</a></nav>
-    <video class="bg-video" id="heroVideo" autoplay muted loop playsinline preload="auto" src="assets/video/entrance.mp4"></video>
+    <video class="bg-video" id="heroVideo" autoplay muted loop playsinline preload="auto">
+      <source media="(max-width: 640px)" src="assets/video/entrance-mobile.mp4" type="video/mp4">
+      <source src="assets/video/entrance.mp4" type="video/mp4">
+    </video>
     <div class="bg-shade"></div>
     <div class="hero-inner">
       <h1 class="shop-name"><span class="word">Roots</span> <span class="word italic">Handicraft</span></h1>
@@ -40,6 +43,16 @@
         <a class="fcard" href="collection.html"><img src="assets/img/shop-32.jpg" alt="Fish Bowl and Turtle" loading="lazy"><span>Fish Bowl &amp; Turtle</span></a>
       </div>
       <p class="frame-note">Tap any photo to open Our Creative</p>
+    </section>
+
+    <section class="section reveal" id="about">
+      <div class="frame-box about-box">
+        <p class="section-kicker">About Us</p>
+        <h2>Handmade, from our shop to your home</h2>
+        <p>Roots Handicraft is a handicraft shop in Vandalur, Chennai — an arts &amp; crafts store for handmade gifts, home decor and souvenirs.</p>
+        <p>Every piece here is made to be looked at, gifted, and kept at home — from dancing Tanjore dolls and wooden pieces to small figurines and decor that adds colour to a room.</p>
+        <p><a href="about.html">Read more on About Us →</a></p>
+      </div>
     </section>
 
     <section class="section reveal">

@@ -205,3 +205,9 @@ a,button{-webkit-tap-highlight-color:transparent}
   .site-nav{gap:18px;padding:14px;font-size:13px}
   .topbar-links{gap:10px}
 }
+
+/* BACKGROUND VIDEO BY DEVICE: PC = full landscape video, phone = vertical mobile video */
+.bg-video{object-fit:cover}
+@media(max-width:640px){
+  .bg-video{object-fit:cover}
+}
