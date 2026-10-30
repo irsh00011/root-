@@ -1,3 +1,12 @@
+// Entrance video: fade in smoothly as soon as it can play, so the wait never looks blank
+// (the poster photo behind it shows instantly while the 13 MB video loads)
+const heroVideo = document.getElementById('heroVideo');
+if (heroVideo) {
+  const showVideo = () => heroVideo.classList.add('loaded');
+  if (heroVideo.readyState >= 3) showVideo();
+  else heroVideo.addEventListener('canplay', showVideo, { once: true });
+}
+
 // Scroll reveal + pop for every item as it comes into view
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(e => {

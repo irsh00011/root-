@@ -6,32 +6,33 @@
 <title>Roots Handicraft — Handmade, Colourful, Alive</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="home">
   <header class="hero">
-    <video class="bg-video" autoplay muted loop playsinline preload="auto" src="assets/video/entrance.mp4"></video>
+    <video class="bg-video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/img/tanjore-doll-home.webp" src="assets/video/entrance.mp4"></video>
     <div class="bg-shade"></div>
     <div class="hero-inner">
-      <h1 class="shop-name"><span>Roots</span> <span>Handicraft</span></h1>
+      <h1 class="shop-name"><span class="word">Roots</span> <span class="word italic">Handicraft</span></h1>
+      <span class="hero-line" aria-hidden="true"></span>
       <p class="hero-small">Handmade gifts &amp; home decor · Vandalur, Chennai</p>
-      <a class="btn primary" href="#preview">Collection</a>
-      <a class="scroll-cue" href="#preview" aria-label="Scroll down">↓</a>
+      <a class="btn primary" href="#collection">Collection</a>
+      <a class="scroll-cue" href="#collection" aria-label="Scroll down">↓</a>
     </div>
   </header>
 
   <main>
-    <section class="section reveal" id="preview">
-      <p class="section-kicker">Tap a favourite</p>
-      <h2>Colour that lives in your home</h2>
-      <div class="grid preview-grid">
-        <a class="card pop" href="collection.html"><img src="assets/img/tanjore-doll-home.webp" alt="Tanjore Doll" loading="lazy"><span>Tanjore Doll</span></a>
-        <a class="card pop" href="collection.html"><img src="assets/img/birdhouse-home.webp" alt="Wooden Birdhouse" loading="lazy"><span>Wooden Birdhouse</span></a>
-        <a class="card pop" href="collection.html"><img src="assets/img/pea-pod-home.webp" alt="Pea Pod" loading="lazy"><span>Pea Pod</span></a>
-        <a class="card pop" href="collection.html"><img src="assets/img/shop-22.jpg" alt="Giraffe Figures" loading="lazy"><span>Giraffe Figures</span></a>
+    <section class="section reveal" id="collection">
+      <p class="section-kicker">The Collection</p>
+      <h2>Pieces people <em>stop</em> for</h2>
+      <div class="bento">
+        <a class="bento-card large" href="collection.html"><img src="assets/img/tanjore-doll-home.webp" alt="Tanjore Doll" loading="lazy"><span class="bento-label"><b>01 · Tanjore Doll</b><i>Tap to open the full collection →</i></span></a>
+        <a class="bento-card" href="collection.html"><img src="assets/img/birdhouse-home.webp" alt="Wooden Birdhouse" loading="lazy"><span class="bento-label"><b>02 · Birdhouse</b></span></a>
+        <a class="bento-card" href="collection.html"><img src="assets/img/pea-pod-home.webp" alt="Pea Pod" loading="lazy"><span class="bento-label"><b>03 · Pea Pod</b></span></a>
+        <a class="bento-card text-tile" href="collection.html"><b>10 pieces<br>in the shop</b><span>Tap any photo —<br>it opens the full collection</span><i>→</i></a>
+        <a class="bento-card wide" href="collection.html"><img src="assets/img/shop-22.jpg" alt="Giraffe Figures" loading="lazy"><span class="bento-label"><b>04 · Giraffe Figures</b></span></a>
       </div>
-      <a class="btn dark" href="collection.html">See all 10 →</a>
     </section>
 
     <section class="section reveal" id="swipe">
