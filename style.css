@@ -193,3 +193,15 @@ a,button{-webkit-tap-highlight-color:transparent}
   .fcard span{padding:10px 4px 2px;font-size:14px}
   .frame-box{padding:28px 16px}
 }
+
+/* SITE NAV + ABOUT */
+.site-nav{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:center;gap:28px;padding:20px;font-family:'Manrope',system-ui,sans-serif;font-weight:800;font-size:15px}
+.site-nav a{color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.site-nav a:hover{color:#ffdf6b}
+.topbar-links{display:flex;gap:16px;align-items:center}
+.about-box p{font-size:18px}
+.footer a:hover{color:#ffdf6b}
+@media(max-width:640px){
+  .site-nav{gap:18px;padding:14px;font-size:13px}
+  .topbar-links{gap:10px}
+}
