@@ -50,3 +50,32 @@ if (popup && cards.length) {
     if (e.key === 'ArrowRight') open(current + 1);
   });
 }
+
+
+// Our Creative fan deck: click a side photo to bring it front, click front photo to open collection
+const fanDeck = document.getElementById('fanDeck');
+if (fanDeck) {
+  const fanCards = [...fanDeck.querySelectorAll('.fan-card')];
+  const fanName = document.getElementById('fanName');
+  let active = 4;
+  function layoutFan() {
+    const step = window.innerWidth <= 640 ? 42 : 72;
+    fanCards.forEach((card, i) => {
+      const d = i - active;
+      const scale = Math.max(0.62, 1 - Math.abs(d) * 0.09);
+      const rot = d * 7;
+      card.style.transform = `translateX(-50%) translateX(${d * step}px) rotate(${rot}deg) scale(${scale})`;
+      card.style.zIndex = 20 - Math.abs(d);
+      card.style.opacity = Math.abs(d) > 4 ? 0 : 1;
+      card.style.pointerEvents = Math.abs(d) > 4 ? 'none' : 'auto';
+    });
+    if (fanName) fanName.textContent = fanCards[active].querySelector('img').alt;
+  }
+  fanCards.forEach((card, i) => card.addEventListener('click', e => {
+    if (i !== active) { e.preventDefault(); active = i; layoutFan(); }
+  }));
+  document.getElementById('fanPrev')?.addEventListener('click', () => { active = (active - 1 + fanCards.length) % fanCards.length; layoutFan(); });
+  document.getElementById('fanNext')?.addEventListener('click', () => { active = (active + 1) % fanCards.length; layoutFan(); });
+  layoutFan();
+  window.addEventListener('resize', layoutFan);
+}
