@@ -1,5 +1,4 @@
-// Entrance video: fade in smoothly as soon as it can play, so the wait never looks blank
-// (the poster photo behind it shows instantly while the 13 MB video loads)
+// Entrance video: fade in smoothly as soon as it can play
 const heroVideo = document.getElementById('heroVideo');
 if (heroVideo) {
   const showVideo = () => heroVideo.classList.add('loaded');
