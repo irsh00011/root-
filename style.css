@@ -58,13 +58,13 @@ a{color:inherit;text-decoration:none}
 .topbar{position:sticky;top:0;z-index:10;background:#4b2e1f;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;box-shadow:0 8px 24px rgba(233,30,140,.3)}
 .topbar h2{font-weight:900;font-size:22px;letter-spacing:.04em;text-transform:uppercase}
 .back,.page-label{font-family:system-ui,sans-serif;font-size:14px;font-weight:700}
-.grid{max-width:1150px;margin:0 auto;padding:6px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:6px;background:#4b2e1f;border:4px solid #4b2e1f;border-radius:14px}
+.grid{max-width:1150px;margin:0 auto;padding:28px 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px}
 .preview-grid{padding:0 0 32px}
-.card{background:#4b2e1f;border-radius:0;overflow:hidden;box-shadow:none;cursor:pointer;transition:transform .25s}
-.card{position:relative}.card:hover{transform:none;box-shadow:none;z-index:5}
-.card img{width:100%;height:300px;object-fit:contain;background:#3b2314;display:block;transition:transform .45s ease}
+.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.12);cursor:pointer;transition:transform .25s,box-shadow .25s}
+.card{position:relative}.card:hover{transform:translateY(-10px) scale(1.04);box-shadow:0 24px 44px rgba(0,0,0,.28);z-index:5}
+.card img{width:100%;height:300px;object-fit:contain;background:#faf5ec;display:block;transition:transform .45s ease}
 .card:hover img{transform:scale(1.04)}
-.card figcaption,.card span{display:block;padding:15px;text-align:center;font-size:18px;font-weight:700;color:#fff8ec}
+.card figcaption,.card span{display:block;padding:15px;text-align:center;font-size:18px;font-weight:700}
 .pop{animation:popin .6s cubic-bezier(.2,.9,.3,1.4) both}
 .pop:nth-child(2){animation-delay:.1s}.pop:nth-child(3){animation-delay:.2s}.pop:nth-child(4){animation-delay:.3s}
 @keyframes popin{from{opacity:0;transform:translateY(30px) scale(.92)}to{opacity:1;transform:translateY(0) scale(1)}}
@@ -116,8 +116,8 @@ a,button{-webkit-tap-highlight-color:transparent}
   .section{padding:40px 14px}
   .section h2{font-size:28px}
   .section p{font-size:16px}
-  .grid{grid-template-columns:repeat(2,1fr);gap:6px;padding:6px}
-  .card{border-radius:0}
+  .grid{grid-template-columns:repeat(2,1fr);gap:12px;padding:16px 12px}
+  .card{border-radius:14px}
   .card img{height:220px}
   .card figcaption,.card span{padding:10px 6px;font-size:14px}
   .hstrip{gap:12px;padding:8px 2px 18px}
@@ -176,19 +176,19 @@ a,button{-webkit-tap-highlight-color:transparent}
 }
 
 /* SIMPLE STRUCTURED FRAMES — below the hero */
-.frame-grid{grid-template-columns:repeat(3,1fr);background:#4b2e1f;padding:6px;gap:6px;border:4px solid #4b2e1f;border-radius:14px}
-.fcard{background:#4b2e1f;padding:0 0 12px;border:none;border-radius:0;box-shadow:none;transition:transform .3s ease;overflow:hidden}
-.fcard:hover{transform:none;box-shadow:none}
-.fcard img{width:100%;height:300px;object-fit:contain;background:#3b2314;display:block;border-radius:0;transition:transform .45s ease}
+.frame-grid{grid-template-columns:repeat(3,1fr)}
+.fcard{background:#fff;padding:12px;border:4px solid #5d3a1a;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.10);transition:transform .3s ease,box-shadow .3s ease;overflow:hidden}
+.fcard:hover{transform:translateY(-5px);box-shadow:0 18px 36px rgba(0,0,0,.20)}
+.fcard img{width:100%;height:300px;object-fit:contain;background:#faf5ec;display:block;border-radius:4px;transition:transform .45s ease}
 .fcard:hover img{transform:scale(1.04)}
-.fcard span{display:block;padding:14px 4px 4px;text-align:center;font-weight:700;font-size:17px;color:#fff8ec}
+.fcard span{display:block;padding:14px 4px 4px;text-align:center;font-weight:700;font-size:17px}
 .frame-note{text-align:center;font-size:15px;color:#666;margin-top:8px}
 .frame-box{background:#fff;border:4px solid #5d3a1a;border-radius:16px;box-shadow:0 12px 32px rgba(0,0,0,.10);max-width:680px;margin:0 auto;padding:36px 24px;text-align:center}
 .frame-box h2{margin-bottom:16px}
 .frame-box p{line-height:1.7;margin-bottom:12px;font-size:17px}
 @media(max-width:640px){
   .frame-grid{grid-template-columns:repeat(2,1fr)}
-  .fcard{padding:0 0 10px}
+  .fcard{padding:8px}
   .fcard img{height:220px}
   .fcard span{padding:10px 4px 2px;font-size:14px}
   .frame-box{padding:28px 16px}
@@ -218,7 +218,7 @@ a,button{-webkit-tap-highlight-color:transparent}
 .brown-band h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,4.5vw,44px);margin-bottom:14px}
 .brown-band p{line-height:1.8;font-size:17px;color:#e8dcc3}
 .fcard span b{display:block;font-size:17px}
-.fcard span i{display:block;font-size:13px;font-style:normal;color:#e8c98a;margin-top:4px;line-height:1.4}
+.fcard span i{display:block;font-size:13px;font-style:normal;color:#8b5e34;margin-top:4px;line-height:1.4}
 .review-big{text-align:center;margin-bottom:22px}
 .review-big strong{display:block;font-family:'Playfair Display',Georgia,serif;font-size:44px;color:#4b2e1f}
 .review-big span{display:block;font-size:16px;color:#5d3a1a;margin:6px 0 10px}
@@ -233,40 +233,3 @@ a,button{-webkit-tap-highlight-color:transparent}
   .review-grid{grid-template-columns:1fr}
   .brown-band{padding:40px 16px}
 }
-
-/* Spider web Our Creative: doll first, web out on click, back on second click */
-.spider-stage{text-align:center;position:relative}
-.spider-btn{background:none;border:none;cursor:pointer;padding:0;margin:0 auto;display:block;position:relative;z-index:4}
-.spider-img{width:230px;height:300px;object-fit:cover;object-position:93% 62%;display:block;border:4px solid #4b2e1f;border-radius:24px;box-shadow:0 14px 34px rgba(0,0,0,.25);transition:width .45s ease,height .45s ease,transform .45s ease}
-.spider-btn:hover .spider-img{transform:scale(1.04)}
-.spider-label{display:block;margin-top:14px;font-family:"Playfair Display",serif;font-weight:900;font-size:22px;color:#4b2e1f;background:#fff8ec;border:3px solid #4b2e1f;border-radius:999px;padding:10px 22px;box-shadow:0 8px 20px rgba(0,0,0,.12)}
-.spider-stage.open .spider-img{width:96px;height:120px;border-radius:16px}
-.spider-stage.open .spider-label{font-size:16px;padding:8px 18px}
-.web-wrap{position:relative;margin-top:20px}
-.web-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:3;overflow:visible}
-.web-svg line{stroke:#5d3a1a;stroke-width:2.5;opacity:.75;stroke-linecap:round}
-.web-grid{position:relative;z-index:1}
-.spider-stage.open .web-grid .fcard{animation:webPop .55s ease backwards}
-.spider-stage.open .web-grid .fcard:nth-child(1){animation-delay:.02s;transform:rotate(-2deg)}
-.spider-stage.open .web-grid .fcard:nth-child(2){animation-delay:.10s;transform:rotate(1.5deg)}
-.spider-stage.open .web-grid .fcard:nth-child(3){animation-delay:.18s;transform:rotate(-1deg)}
-.spider-stage.open .web-grid .fcard:nth-child(4){animation-delay:.26s;transform:rotate(2deg)}
-.spider-stage.open .web-grid .fcard:nth-child(5){animation-delay:.34s;transform:rotate(-1.5deg)}
-.spider-stage.open .web-grid .fcard:nth-child(6){animation-delay:.42s;transform:rotate(1deg)}
-.spider-stage.open .web-grid .fcard:nth-child(7){animation-delay:.50s;transform:rotate(-2.5deg)}
-.spider-stage.open .web-grid .fcard:nth-child(8){animation-delay:.58s;transform:rotate(2deg)}
-.spider-stage.open .web-grid .fcard:nth-child(9){animation-delay:.66s;transform:rotate(-1deg)}
-.spider-stage.open .web-grid .fcard:nth-child(10){animation-delay:.74s;transform:rotate(1.5deg)}
-@keyframes webPop{from{opacity:0;transform:scale(.6) rotate(0deg)}to{opacity:1;transform:scale(1)}}
-@media(max-width:640px){.spider-img{width:190px;height:250px}.spider-stage.open .spider-img{width:80px;height:100px}}
-
-/* Doll stands and bounces gently; web photos are separate, no brown background here */
-.spider-img{animation:dollStand 2.4s ease-in-out infinite}
-@keyframes dollStand{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-10px) rotate(1.5deg)}}
-.spider-stage.open .spider-img{animation:dollStandSmall 2.4s ease-in-out infinite}
-@keyframes dollStandSmall{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-5px) rotate(1.5deg)}}
-.web-grid{background:none!important;border:none!important;padding:0!important;gap:20px!important}
-.web-grid .fcard{background:#fff!important;border:4px solid #5d3a1a!important;border-radius:10px!important;padding:12px!important;box-shadow:0 8px 24px rgba(0,0,0,.10)!important}
-.web-grid .fcard img{background:#fff!important}
-.web-grid .fcard span{color:#3b2314!important}
-.web-grid .fcard span i{color:#8b5e34!important}
