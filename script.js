@@ -87,7 +87,7 @@ if (spiderBtn && spiderStage && webWrap && webSvg) {
     const open = spiderStage.classList.toggle('open');
     spiderBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
     webWrap.hidden = !open;
-    spiderLabel.textContent = open ? 'Click again to come back to him' : 'Click for photos';
+    spiderLabel.textContent = open ? 'Click him again' : 'Click him for the pics';
     if (open) {
       requestAnimationFrame(() => { drawWeb(); webWrap.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
     } else {

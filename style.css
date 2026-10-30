@@ -259,3 +259,14 @@ a,button{-webkit-tap-highlight-color:transparent}
 .spider-stage.open .web-grid .fcard:nth-child(10){animation-delay:.74s;transform:rotate(1.5deg)}
 @keyframes webPop{from{opacity:0;transform:scale(.6) rotate(0deg)}to{opacity:1;transform:scale(1)}}
 @media(max-width:640px){.spider-img{width:190px;height:250px}.spider-stage.open .spider-img{width:80px;height:100px}}
+
+/* Doll stands and bounces gently; web photos are separate, no brown background here */
+.spider-img{animation:dollStand 2.4s ease-in-out infinite}
+@keyframes dollStand{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-10px) rotate(1.5deg)}}
+.spider-stage.open .spider-img{animation:dollStandSmall 2.4s ease-in-out infinite}
+@keyframes dollStandSmall{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-5px) rotate(1.5deg)}}
+.web-grid{background:none!important;border:none!important;padding:0!important;gap:20px!important}
+.web-grid .fcard{background:#fff!important;border:4px solid #5d3a1a!important;border-radius:10px!important;padding:12px!important;box-shadow:0 8px 24px rgba(0,0,0,.10)!important}
+.web-grid .fcard img{background:#fff!important}
+.web-grid .fcard span{color:#3b2314!important}
+.web-grid .fcard span i{color:#8b5e34!important}
