@@ -50,3 +50,49 @@ if (popup && cards.length) {
     if (e.key === 'ArrowRight') open(current + 1);
   });
 }
+
+
+// Spider web Our Creative: doll first, click to web out photos, click again back to doll
+const spiderBtn = document.getElementById('spiderBtn');
+const spiderStage = document.getElementById('spiderStage');
+const webWrap = document.getElementById('webWrap');
+const webSvg = document.getElementById('webSvg');
+const spiderLabel = document.getElementById('spiderLabel');
+if (spiderBtn && spiderStage && webWrap && webSvg) {
+  // Random-looking but fixed ties between photo boxes, so the web looks the same every time
+  const ties = [[0,4],[1,5],[2,6],[3,7],[4,8],[5,9],[0,3],[2,5],[6,9],[1,4],[3,8]];
+  function drawWeb() {
+    const wrap = spiderStage.getBoundingClientRect();
+    const cards = [...webWrap.querySelectorAll('.fcard')];
+    const spider = spiderBtn.getBoundingClientRect();
+    const sx = spider.left - wrap.left + spider.width / 2;
+    const sy = spider.top - wrap.top + spider.height / 2;
+    const centres = cards.map(c => {
+      const r = c.getBoundingClientRect();
+      return [r.left - wrap.left + r.width / 2, r.top - wrap.top + r.height / 2];
+    });
+    webSvg.setAttribute('viewBox', `0 0 ${wrap.width} ${wrap.height}`);
+    webSvg.setAttribute('width', wrap.width);
+    webSvg.setAttribute('height', wrap.height);
+    let lines = '';
+    // Web strands from the doll to every photo
+    centres.forEach(([x, y]) => { lines += `<line x1="${sx}" y1="${sy}" x2="${x}" y2="${y}"/>`; });
+    // Random cross-ties between photo boxes
+    ties.forEach(([a, b]) => {
+      if (centres[a] && centres[b]) lines += `<line x1="${centres[a][0]}" y1="${centres[a][1]}" x2="${centres[b][0]}" y2="${centres[b][1]}"/>`;
+    });
+    webSvg.innerHTML = lines;
+  }
+  spiderBtn.addEventListener('click', () => {
+    const open = spiderStage.classList.toggle('open');
+    spiderBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    webWrap.hidden = !open;
+    spiderLabel.textContent = open ? 'Click again to come back to him' : 'Click for photos';
+    if (open) {
+      requestAnimationFrame(() => { drawWeb(); webWrap.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+    } else {
+      webSvg.innerHTML = '';
+    }
+  });
+  window.addEventListener('resize', () => { if (!webWrap.hidden) drawWeb(); });
+}
